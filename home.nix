@@ -15,6 +15,8 @@
     ./modules/hyprland-config.nix
     ./modules/neovim.nix
     ./modules/keybindings.nix
+    ./modules/quickshell.nix
+    ./modules/ghostty.nix
   ];
 
   home.file."debug-home-manager-loaded".text = "yep, it's loaded!";

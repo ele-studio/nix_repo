@@ -4,7 +4,7 @@
   wayland.windowManager.hyprland.settings = {
     monitor = [
       "DP-1,3440x1440@60,0x0,1"
-      "eDP-1,2256x1504@60,0x1440,1.175"
+      "eDP-1,2256x1504@60,3440x0,1.175"
       ",preferred,auto,auto"
     ];
 
@@ -20,14 +20,14 @@
     ];
 
     exec-once = [
-      "foot"
-      "waybar"
+      "ghostty"
       "hyprctl dispatch workspace 1"
     ];
 
     input = {
       kb_layout = "us";
       follow_mouse = 1;
+      mouse_refocus = false;
     };
 
     general = {
@@ -49,6 +49,14 @@
 
     xwayland = {
       force_zero_scaling = true;
+    };
+
+    misc = {
+      mouse_move_enables_dpms = true;
+      key_press_enables_dpms = true;
+      disable_hyprland_logo = true;
+      disable_splash_rendering = true;
+      mouse_move_focuses_monitor = true;
     };
 
     bind = [

@@ -156,7 +156,7 @@
     nautilus
     neovim
     nodejs_22
-    overskride
+    opencode
     papirus-icon-theme
     pavucontrol
     quickemu
