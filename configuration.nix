@@ -7,7 +7,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Networking
   networking.hostName = "Sn0wyRiver";
@@ -60,7 +60,7 @@
   # XDG Portal
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [pkgs.xdg-desktop-portal-hyprland ];
   };
 
   # Audio
@@ -79,8 +79,6 @@
     description = "Wesley";
     extraGroups = [ "networkmanager" "wheel" "bluetooth" ];
     packages = with pkgs; [
-      kdePackages.kate
-      kdePackages.konsole
       dconf-editor
     ];
     shell = pkgs.fish;
@@ -133,6 +131,7 @@
       g = "git";
       lg = "lazygit";
       housekeeper = "sudo nix-collect-garbage --delete-older-than 30d";
+      cleanAll = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old";
     };
   };
 
@@ -141,6 +140,8 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
+    bc
+    blueman
     btop
     eog
     fish
@@ -152,14 +153,17 @@
     git
     gnome-disk-utility
     lazygit
+    lm_sensors
     localsend
     nautilus
     neovim
     nodejs_22
     opencode
+    overskride
     papirus-icon-theme
     pavucontrol
     quickemu
+    rofi-wayland
     tailscale
     typora
     vim
@@ -167,6 +171,7 @@
     vscode
     quickshell
     wget
+    wlsunset
     libappindicator
     xdg-desktop-portal
     xdg-desktop-portal-hyprland

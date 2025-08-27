@@ -15,11 +15,10 @@
     ./modules/hyprland-config.nix
     ./modules/neovim.nix
     ./modules/keybindings.nix
-    ./modules/quickshell.nix
     ./modules/ghostty.nix
+    ./modules/power-menu.nix
+    ./modules/power-script.nix
   ];
-
-  home.file."debug-home-manager-loaded".text = "yep, it's loaded!";
 
   home.stateVersion = "25.05";
 

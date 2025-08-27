@@ -18,39 +18,53 @@
   '';
 
   xdg.configFile."wofi/style.css".text = ''
+    /* Gruvbox Dark palette */
+    @define-color dark        #282828;
+    @define-color red         #ea6962;
+    @define-color red_alt     #ca3433;
+    @define-color orange      #e78a4e;
+    @define-color yellow      #d8a657;
+    @define-color blue        #7daea3;
+    @define-color green       #a9a665;
+    @define-color aqua        #89b482;
+    @define-color cream       #d4be98;
+    @define-color grey        #504945;
+    @define-color dark_grey   #181818;
+    @define-color transparent rgba(0,0,0,0);
+
     /* Base typography */
     * {
       font-family: Iosevka, sans-serif;
       font-size: 16px;
     }
 
-    /* Window chrome — Hyprland style */
+    /* Window chrome */
     window {
       margin: 0px;
-      border: 2px solid rgba(245, 194, 231, 1);
+      border: 2px solid @orange;
       border-radius: 10px;
-      background-color: #1f1f28;
+      background-color: @dark;
     }
 
     /* Search input */
     #input {
       margin: 8px;
       border: none;
-      background-color: #2a2a37;
-      color: #dcd7ba;
+      background-color: @dark_grey;
+      color: @cream;
     }
 
     /* Layout containers */
     #inner-box {
       margin: 8px;
       border: none;
-      background-color: #1f1f28; /* sumiInk0 */
+      background-color: @dark;
     }
 
     #outer-box {
       margin: 4px;
       border: none;
-      background-color: #1f1f28; /* sumiInk0 */
+      background-color: @dark;
     }
 
     #scroll {
@@ -64,8 +78,8 @@
     }
 
     #entry:selected {
-      background-color: #2d4f67; /* waveBlue2 */
-      color: #dcd7ba;
+      background-color: @green;
+      color: @cream;
     }
 
     arrow {
@@ -81,7 +95,8 @@
 
     #text {
       margin: 2px 0;
-      color: #dcd7ba;
+      color: @cream;
     }
   '';
+
 }

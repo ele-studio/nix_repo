@@ -36,7 +36,6 @@ return {
         ["typescript"] = true,
         ["lua"] = true,
         ["rust"] = true,
-        ["go"] = true,
         ["python"] = true,
       }
     end,

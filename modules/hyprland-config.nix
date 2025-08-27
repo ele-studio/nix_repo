@@ -20,6 +20,7 @@
     ];
 
     exec-once = [
+      "waybar"
       "ghostty"
       "hyprctl dispatch workspace 1"
     ];
@@ -28,14 +29,16 @@
       kb_layout = "us";
       follow_mouse = 1;
       mouse_refocus = false;
+      kb_options = caps:super;
     };
+
 
     general = {
       gaps_in = 5;
       gaps_out = 10;
       border_size = 2;
-      "col.active_border" = "rgba(f5c2e7ff)";
-      "col.inactive_border" = "rgba(cba6f7ff)";
+      "col.active_border" = "rgba(e78a4eff)";
+      "col.inactive_border" = "rgba(d8a657ff)";
     };
 
     decoration.rounding = 5;
@@ -62,6 +65,7 @@
     bind = [
       # Power Options
       "SUPER SHIFT, Q, exec, systemctl poweroff"
+      "SUPER SHIFT, P, exec, ${config.home.homeDirectory}/bin/power.sh"
       "SUPER, L, exec, hyprlock"
 
       # App Launchers
